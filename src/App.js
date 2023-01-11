@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import image from '../src/img/netflix.png';
+import Button from '@mui/material/Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="front-page">
+      <div className='header'>
+         <div className='logo'>
+          <img src={image} alt="img" />
+          </div>
+          <div className='btn'><Button variant="contained" > Sig in</Button></div>
+      </div>
+      <div className='banner'>
+          <div className='banner-content'>
+            <h1>Unlimited movies, TV shows and more.</h1>
+            <h4>Watch anywhere. Cancel anytime.</h4>
+            <h5>Ready to watch? Enter your email to create or restart your membership.</h5>
+            <div className='email-group'>
+            <input type='email' placeholder='Email address'/>
+            <button type='button' >Get Started </button>
+          </div>
+          </div>
+          
+      </div>
     </div>
+    </>
   );
 }
 
