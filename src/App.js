@@ -1,31 +1,19 @@
-import './App.css';
-import image from '../src/img/netflix.png';
-import Button from '@mui/material/Button';
+import Home from './Home'
+import Signin from './Signin';
+import Msignin from './Msignin'
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-    <div className="front-page">
-      <div className='header'>
-         <div className='logo'>
-          <img src={image} alt="img" />
-          </div>
-          <div className='btn'><Button variant="contained" > Sig in</Button></div>
-      </div>
-      <div className='banner'>
-          <div className='banner-content'>
-            <h1>Unlimited movies, TV shows and more.</h1>
-            <h4>Watch anywhere. Cancel anytime.</h4>
-            <h5>Ready to watch? Enter your email to create or restart your membership.</h5>
-            <div className='email-group'>
-            <input type='email' placeholder='Email address'/>
-            <button type='button' >Get Started </button>
-          </div>
-          </div>
-          
-      </div>
-    </div>
-    </>
+    
+    <BrowserRouter>
+    <Routes>
+      <Route path="/M" element={<Msignin/>}></Route>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path='*' element={<Navigate to="/M"></Navigate>}></Route>
+    </Routes>
+    </BrowserRouter>
+    
   );
 }
 
